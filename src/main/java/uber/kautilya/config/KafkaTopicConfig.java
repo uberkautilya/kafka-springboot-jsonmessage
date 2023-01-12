@@ -8,9 +8,16 @@ import org.apache.kafka.clients.admin.NewTopic;
 @Configuration
 public class KafkaTopicConfig {
     @Bean
-    public NewTopic generateTopic() {
+    public NewTopic beanTopic() {
         return TopicBuilder.name("javaguides")
-                .partitions(10)
+                .partitions(1)
+                .build();
+    }
+
+    @Bean
+    public NewTopic beanJsonTopic() {
+        return TopicBuilder.name("javaguidesjson")
+                .partitions(1)
                 .build();
     }
 }
