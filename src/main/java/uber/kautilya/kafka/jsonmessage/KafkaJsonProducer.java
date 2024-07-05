@@ -12,7 +12,7 @@ import uber.kautilya.model.User;
 @Service
 public class KafkaJsonProducer {
     private static final Logger LOGGER = LoggerFactory.getLogger(KafkaJsonProducer.class);
-    private KafkaTemplate<String, User> kafkaTemplate;
+    private final KafkaTemplate<String, User> kafkaTemplate;
 
     /**
      * Constructor dependency: Spring boot would inject this dependency as only one parameterized constructor
