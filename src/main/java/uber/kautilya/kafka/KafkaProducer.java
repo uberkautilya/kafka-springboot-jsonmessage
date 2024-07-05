@@ -8,12 +8,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class KafkaProducer {
     private static final Logger LOGGER = LoggerFactory.getLogger(KafkaProducer.class);
-    private KafkaTemplate<String, String> kafkaTemplate;
+    private final KafkaTemplate<String, String> kafkaTemplate;
 
     /**
      * Constructor dependency: Spring boot would inject this dependency
-     *
-     * @param kafkaTemplate
      */
     public KafkaProducer(KafkaTemplate<String, String> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
